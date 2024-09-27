@@ -18,11 +18,10 @@ public class CreateCourierTest {
     @Test
     @DisplayName("Создание курьера")
     public void createCourier() {
-        var courier = Courier.random();
-        ValidatableResponse createResponse = client.createCourier(courier);
+        ValidatableResponse createResponse = client.createCourier(defaultCourier);
         check.checkCreated(createResponse);
 
-        var credentials = CourierCredentials.fromCourier(courier);
+        var credentials = CourierCredentials.fromCourier(defaultCourier);
         ValidatableResponse loginResponse = client.logIn(credentials);
         courierId = check.checkLoggedIn(loginResponse);
     }

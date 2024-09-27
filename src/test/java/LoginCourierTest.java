@@ -36,7 +36,7 @@ public class LoginCourierTest {
 
     @Test
     @DisplayName("Логирование курьера в системе с пустым полем login")
-    public void CourierWithoutLogin() {
+    public void courierWithoutLogin() {
         CourierCredentials credentials = defaultCredentials.clone();
         credentials.setLogin("");
 
@@ -46,7 +46,7 @@ public class LoginCourierTest {
 
     @Test
     @DisplayName("Логирование курьера в системе без поля login")
-    public void CourierNullLogin() {
+    public void courierNullLogin() {
         CourierCredentials credentials = defaultCredentials.clone();
         credentials.setLogin(null);
 
@@ -56,7 +56,7 @@ public class LoginCourierTest {
 
     @Test
     @DisplayName("Логирование курьера в системе с пустым полем password")
-    public void CourierWithoutPassword() {
+    public void courierWithoutPassword() {
         CourierCredentials credentials = defaultCredentials.clone();
         credentials.setPassword("");
 
@@ -66,7 +66,7 @@ public class LoginCourierTest {
 
     @Test
     @DisplayName("Логирование курьера в системе без поля password")
-    public void CourierNullPassword() {
+    public void courierNullPassword() {
         CourierCredentials credentials = defaultCredentials.clone();
         credentials.setPassword(null);
 
@@ -76,7 +76,7 @@ public class LoginCourierTest {
 
     @Test
     @DisplayName("Логирование курьера в системе с неверным паролем")
-    public void loginWithInvalidedPasswordDataCourier() {
+    public void loginWithInvalidedPasswordCourier() {
         Courier courier = defaultCourier;
         ValidatableResponse createResponse = client.createCourier(courier);
         check.checkCreated(createResponse);

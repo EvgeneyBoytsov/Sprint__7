@@ -1,11 +1,12 @@
 import io.qameta.allure.junit4.DisplayName;
-import orders.OrderChecks;
-import orders.OrderClient;
 import io.restassured.response.ValidatableResponse;
 import orders.Order;
+import orders.OrderChecks;
+import orders.OrderClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+
 import java.util.List;
 
 @RunWith(Parameterized.class)
@@ -19,7 +20,7 @@ public class OrderTest {
         this.colorScooter = colorScooter;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "set color {0}")
     public static Object[] getOrderCreation() {
         return new Object[][]{
                 {List.of()},
